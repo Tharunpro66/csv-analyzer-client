@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV Data Explorer</title>
+    <!-- Basic Styling -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Libraries via CDN -->
+    <!-- PapaParse (for CSV Parsing) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    <!-- jQuery (Required by DataTables) -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- DataTables.net JS & CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+
+</head>
+<body>
+
+    <h1>CSV Data Explorer</h1>
+
+    <div class="upload-section">
+        <label for="csvFileInput">Upload CSV File:</label>
+        <input type="file" id="csvFileInput" accept=".csv, text/csv">
+        <div id="fileInfo" class="file-info"></div>
+    </div>
+
+    <hr class="separator">
+
+    <!-- Area where dynamic filters will be added -->
+    <div class="controls-section" id="filterControls">
+        <h2>Filters</h2>
+        <div id="dynamicFilters" class="filter-grid">
+            {/* <!-- Dynamic filter controls will be inserted here by script.js --> */}
+             <p class="placeholder-text">Upload a CSV to generate filters.</p>
+        </div>
+        <button id="resetFiltersBtn" class="control-button" style="display: none;">Reset All Filters</button>
+    </div>
+
+    <hr class="separator">
+
+    <!-- Area for the interactive data table -->
+    <div class="table-section">
+        <h2>Data Table</h2>
+        <div id="dataTableContainer">
+            <p class="placeholder-text">Upload a CSV to view the data table.</p>
+        </div>
+    </div>
+
+     <hr class="separator">
+
+     <!-- Area for Charts -->
+     <div class="charts-section">
+          <h2>Visualizations</h2>
+          <div class="chart-grid">
+              <div class="chart-container">
+                  <h3>Chart 1 (e.g., Category Counts)</h3>
+                  <div id="chart1Controls">
+                  </div>
+                  <canvas id="chart1Canvas"></canvas>
+              </div>
+              <div class="chart-container">
+                  <h3>Chart 2 (e.g., Scatter Plot)</h3>
+                   <div id="chart2Controls">
+                  </div>
+                  <canvas id="chart2Canvas"></canvas>
+              </div>
+          </div>
+           <p id="chartsPlaceholder" class="placeholder-text">Upload a CSV to generate charts.</p>
+     </div>
+
+
+    <!-- Link your script file at the end -->
+    <script src="script.js"></script>
+</body>
+</html>
